@@ -1,3 +1,3 @@
 module.exports = {
-  base64ImageToRGBMatrix: require('./base64ImageToRGBMatrix.js')
+  base64ImageToRGBMatrix: require('./lib/base64ImageToRGBMatrix.js')
 }

@@ -1,6 +1,6 @@
 {
   "name": "base64-image-utils",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Utils for base64 image data.",
   "main": "index.js",
   "scripts": {
