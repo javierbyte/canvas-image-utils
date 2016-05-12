@@ -1,6 +1,12 @@
 # base64 image utils
 Utils for base64 image data.
 
+# Installation
+
+```
+  npm i base64-image-utils --save
+```
+
 # Usage
 ```js
   var base64ImageUtils = require('base64-image-utils')
@@ -15,7 +21,8 @@ Utils for base64 image data.
         {
           r: <Red value of the color>,
           g: <Green value of the color>,
-          b: <Blue value of the color>
+          b: <Blue value of the color>,
+          a: <Alpha value of the color>
         }
     */
   })
@@ -30,7 +37,8 @@ Utils for base64 image data.
           rgb: {
             r: <Red value of the color>,
             g: <Green value of the color>,
-            b: <Blue value of the color>
+            b: <Blue value of the color>,
+            a: <Alpha value of the color>
           }
         }
     */
