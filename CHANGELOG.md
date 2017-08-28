@@ -1,5 +1,8 @@
 # CHANGELOG
 
+# 1.0.2
+- Changed `base64ImageToImageData` to `base64ImageToImageRawData`.
+
 # 1.0.1
 - Add `img` return to `base64ImageToImageData` as third parameter
 
