@@ -1,5 +1,8 @@
 # CHANGELOG
 
+# 1.0.1
+- Add `img` return to `base64ImageToImageData` as third parameter
+
 # 1.0.0
 - Add `base64ImageToImageData`
 - Better semver

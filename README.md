@@ -13,7 +13,7 @@ Utils for base64 image data.
 
   var {base64ImageToRGBMatrix, base64ImageToRGBArray, base64ImageToImageData} = base64ImageUtils
 
-  base64ImageToImageData(imgSrc, function(err, data) {
+  base64ImageToImageData(imgSrc, function(err, data, img) {
     /*
       data is a matrix with rows and columns that corresponds
       to every pixel of the image, where each pixel is represented
