@@ -1,6 +1,6 @@
 {
   "name": "base64-image-utils",
-  "version": "0.2.0",
+  "version": "1.0.0",
   "description": "Utils for base64 image data.",
   "main": "index.js",
   "scripts": {
@@ -10,12 +10,7 @@
     "type": "git",
     "url": "git+https://github.com/javierbyte/base64-image-utils.git"
   },
-  "keywords": [
-    "base64",
-    "image",
-    "imagedata",
-    "base64image"
-  ],
+  "keywords": ["base64", "image", "imagedata", "base64image"],
   "author": "hi@javier.xyz",
   "license": "ISC",
   "bugs": {

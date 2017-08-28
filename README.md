@@ -11,9 +11,9 @@ Utils for base64 image data.
 ```js
   var base64ImageUtils = require('base64-image-utils')
 
-  var {base64ImageToRGBMatrix, base64ImageToRGBArray} = base64ImageUtils
+  var {base64ImageToRGBMatrix, base64ImageToRGBArray, base64ImageToImageData} = base64ImageUtils
 
-  base64ImageToRGBMatrix(base64Image, function(err, data) {
+  base64ImageToImageData(imgSrc, function(err, data) {
     /*
       data is a matrix with rows and columns that corresponds
       to every pixel of the image, where each pixel is represented
@@ -27,7 +27,21 @@ Utils for base64 image data.
     */
   })
 
-  base64ImageToRGBArray(base64Image, function(err, data) {
+  base64ImageToRGBMatrix(imgSrc, function(err, data) {
+    /*
+      data is a matrix with rows and columns that corresponds
+      to every pixel of the image, where each pixel is represented
+      as:
+        {
+          r: <Red value of the color>,
+          g: <Green value of the color>,
+          b: <Blue value of the color>,
+          a: <Alpha value of the color>
+        }
+    */
+  })
+
+  base64ImageToRGBArray(imgSrc, function(err, data) {
     /*
       data is an array with every pixel described as:
       as:
