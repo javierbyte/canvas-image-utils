@@ -50,4 +50,3 @@ Utils for base64 image data.
 ```
 
 You can optionally send a third `options` parameter, which is an object that can hold `width` or `maxWidth` values.
-

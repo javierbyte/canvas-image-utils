@@ -1,5 +1,8 @@
 # CHANGELOG
 
+# 1.1.0
+- Removes the heavy matrix extraction processing from the main thread, allowing the user to stay interactive with the page meanwhile. Thanks @josejbreijo !
+
 # 1.0.2
 - Changed `base64ImageToImageData` to `base64ImageToImageRawData`.
 
