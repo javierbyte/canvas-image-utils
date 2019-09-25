@@ -1,5 +1,8 @@
 # CHANGELOG
 
+# 1.1.2
+- Bugfix
+
 # 1.1.1
 - Removes the usage of spread syntax on arrays.
 
