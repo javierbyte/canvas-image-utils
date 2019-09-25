@@ -1,5 +1,8 @@
 # CHANGELOG
 
+# 1.1.1
+- Removes the usage of spread syntax on arrays.
+
 # 1.1.0
 - Removes the heavy matrix extraction processing from the main thread, allowing the user to stay interactive with the page meanwhile. Thanks @josejbreijo !
 
