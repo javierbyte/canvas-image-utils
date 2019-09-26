@@ -1,6 +1,6 @@
 {
   "name": "base64-image-utils",
-  "version": "1.1.2",
+  "version": "1.1.3",
   "description": "Utils for base64 image data.",
   "main": "index.js",
   "scripts": {
@@ -11,8 +11,8 @@
     "url": "git+https://github.com/javierbyte/base64-image-utils.git"
   },
   "keywords": ["base64", "image", "imagedata", "base64image"],
-  "author": "hi@javier.xyz",
-  "license": "ISC",
+  "author": "Javier Bórquez <hi@javier.xyz> (http://github.com/javierbyte)",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/javierbyte/base64-image-utils/issues"
   },
