@@ -1,7 +1,7 @@
 {
-  "name": "base64-image-utils",
-  "version": "1.2.0",
-  "description": "Utils for base64 image data.",
+  "name": "canvas-image-utils",
+  "version": "2.0.1",
+  "description": "Utils for image data.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -10,11 +10,19 @@
     "type": "git",
     "url": "git+https://github.com/javierbyte/base64-image-utils.git"
   },
-  "keywords": ["base64", "image", "imagedata", "base64image"],
-  "author": "Javier Bórquez <hi@javier.xyz> (http://github.com/javierbyte)",
+  "keywords": [
+    "base64",
+    "image",
+    "imagedata",
+    "base64image"
+  ],
+  "author": "Javier Bórquez <hi@javier.xyz> (https://github.com/javierbyte)",
   "license": "BSD-3-Clause",
   "bugs": {
     "url": "https://github.com/javierbyte/base64-image-utils/issues"
   },
-  "homepage": "https://github.com/javierbyte/base64-image-utils#readme"
+  "homepage": "https://github.com/javierbyte/base64-image-utils#readme",
+  "devDependencies": {
+    "eslint": "^7.24.0"
+  }
 }

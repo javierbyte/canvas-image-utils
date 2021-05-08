@@ -1,5 +1,14 @@
 # CHANGELOG
 
+# 2.0.0
+- New name! The package is now named `canvas-image-utils` as it not only support `base64` images.
+- Methods new return promises.
+- Methods were renamed
+  - `base64ImageToRGBArray` -> `imageToRGBArray`
+  - `base64ImageToRGBMatrix` -> `imageToRGBMatrix`
+  - `base64ImageToImageData` -> `imageToRawData`
+- The second argument `callback` is not needed anymore since they return a promise.
+
 # 1.1.2
 - Bugfix
 

@@ -1,51 +1,49 @@
-# base64 image utils
-Utils for base64 image data.
+# canvas-image-utils
+
+Utils for base64 image data. Formerly `base64-image-utils`.
 
 # Installation
+
 ```
-npm i base64-image-utils
+npm i canvas-image-utils
 ```
 
 # Usage
+
 ```js
-const base64ImageUtils = require('base64-image-utils')
+import {
+  imageToRGBArray,
+  imageToRGBMatrix,
+  imageToRawData,
+  imgSrcToCtx,
+  ctxToRGBArray,
+  ctxToRGBMatrix,
+} from "canvas-image-utils";
 
-const {base64ImageToRGBMatrix, base64ImageToRGBArray, base64ImageToImageData} = base64ImageUtils
+const array = await imageToRGBArray(IMAGE_SRC, { size: 128 });
+// Array<{
+//   x: <X position of the pixel>,
+//   y: <Y position of the pixel>,
+//   rgb: {
+//     r: <Red value of the color>,
+//     g: <Green value of the color>,
+//     b: <Blue value of the color>,
+//     a: <Alpha value of the color>
+//   }
+// }>
 
-base64ImageToImageData(imgSrc, function(err, rawData, img) {
+const matrix = await imageToRGBMatrix(IMAGE_SRC, { size: 128 });
+// Array<Array<
+//   {
+//     r: <Red value of the color>,
+//     g: <Green value of the color>,
+//     b: <Blue value of the color>,
+//     a: <Alpha value of the color>
+//   }
+// >>
 
-})
-
-base64ImageToRGBMatrix(imgSrc, function(err, data) {
-  /*
-    data is a matrix with rows and columns that corresponds
-    to every pixel of the image, where each pixel is represented
-    as:
-      {
-        r: <Red value of the color>,
-        g: <Green value of the color>,
-        b: <Blue value of the color>,
-        a: <Alpha value of the color>
-      }
-  */
-})
-
-base64ImageToRGBArray(imgSrc, function(err, data) {
-  /*
-    data is an array with every pixel described as:
-    as:
-      {
-        x: <X position of the pixel>,
-        y: <Y position of the pixel>,
-        rgb: {
-          r: <Red value of the color>,
-          g: <Green value of the color>,
-          b: <Blue value of the color>,
-          a: <Alpha value of the color>
-        }
-      }
-  */
-})
+const rawData = await imageToRawData(IMAGE_SRC, { size: 128 });
+// Raw data from `ctx.getImageData`
 ```
 
-You can optionally send a third `options` parameter, which is an object that can hold `width` or `maxWidth` values.
+The first argument of each function is the source of the image, the second is a configuration object that supports `width` and `maxWidth` values, or a `canvas` dom element if wanted to be drawn on screen.
