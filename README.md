@@ -1,6 +1,6 @@
 # canvas-image-utils
 
-Utils for base64 image data. Formerly `base64-image-utils`.
+Utils for base64 image data, dependency free. Formerly `base64-image-utils`.
 
 # Installation
 
