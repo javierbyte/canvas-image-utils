@@ -41,7 +41,7 @@ Object with `r`,`g`,`b`,`a` values as 0-255 integers.
 
 #### Defined in
 
-[index.ts:2](https://github.com/javierbyte/base64-image-utils/blob/4333d45/index.ts#L2)
+[index.ts:2](https://github.com/javierbyte/base64-image-utils/blob/62c261c/index.ts#L2)
 
 ___
 
@@ -67,7 +67,7 @@ rgbMatrix[2,1].r // red value of the pixel on `2`,`1`.
 
 #### Defined in
 
-[index.ts:34](https://github.com/javierbyte/base64-image-utils/blob/4333d45/index.ts#L34)
+[index.ts:34](https://github.com/javierbyte/base64-image-utils/blob/62c261c/index.ts#L34)
 
 ___
 
@@ -93,7 +93,7 @@ Each element of the array containts `x`,`y`, `rgb`; its position and the RGBA va
 
 #### Defined in
 
-[index.ts:18](https://github.com/javierbyte/base64-image-utils/blob/4333d45/index.ts#L18)
+[index.ts:18](https://github.com/javierbyte/base64-image-utils/blob/62c261c/index.ts#L18)
 
 ## Functions
 

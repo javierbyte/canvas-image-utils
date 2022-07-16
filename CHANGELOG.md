@@ -1,5 +1,10 @@
 # CHANGELOG
 
+# 2.4.0
+
+- Improve type definitions.
+- Remove undocumented `ctxToRawUint8Array`.
+
 # 2.3.2
 
 - Add `cjs` output.
