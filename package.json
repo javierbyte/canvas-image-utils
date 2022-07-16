@@ -10,8 +10,8 @@
     "url": "git+https://github.com/javierbyte/canvas-image-utils.git"
   },
   "scripts": {
-    "docs": "typedoc --plugin typedoc-plugin-markdown --hideBreadcrumbs --hideInPageTOC --out docs index.ts",
-    "docs-watch": "typedoc --watch --plugin typedoc-plugin-markdown --hideBreadcrumbs --hideInPageTOC --out docs index.ts",
+    "docs": "typedoc --plugin typedoc-plugin-markdown --hideBreadcrumbs --out docs index.ts",
+    "docs-watch": "typedoc --watch --plugin typedoc-plugin-markdown --hideBreadcrumbs --out docs index.ts",
     "prepublish": "npm run build",
     "build": "rm -rf dist && npm run build:esm && npm run build:types && npm run docs",
     "build:esm": "tsc -p ./tsconfig.esm.json",

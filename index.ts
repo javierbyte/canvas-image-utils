@@ -5,7 +5,7 @@ export type RGBA = { r: number; g: number; b: number; a: number };
  * Each element of the array containts `x`,`y`, `rgb`; its position and the RGBA value.
  *
  * @example
- * ``
+ * ```
  * // rgbArray
  * [
  *   {x: 0, y: 0, rgba: {r: 0, g: 0, b: 0}},
@@ -13,7 +13,7 @@ export type RGBA = { r: number; g: number; b: number; a: number };
  *   {x: 1, y: 0, rgba: {r: 128, g: 128, b: 128}},
  *   {x: 1, y: 1, rgba: {r: 0, g: 0, b: 0}}
  * ]
- * ``
+ * ```
  */
 export type RGBArray = Array<{ x: number; y: number; rgb: RGBA }>;
 /** All output pixels in a matrix. RGBAMatrix is an array of size `WIDTH`, and each array contains an array of size `HEIGHT` which constains the `RGBA` elements.
@@ -21,7 +21,7 @@ export type RGBArray = Array<{ x: number; y: number; rgb: RGBA }>;
  * Each element of the array containts `x`,`y`, `rgb`; its position and the RGBA value.
  *
  * @example
- * ``js
+ * ```js
  * // rgbMatrix
  * [
  *  [{r: 0, g: 0, b: 0}, {r: 0, g: 0, b: 0}],
@@ -29,7 +29,7 @@ export type RGBArray = Array<{ x: number; y: number; rgb: RGBA }>;
  *  [{r: 0, g: 0, b: 0}, {r: 0, g: 0, b: 0}]
  * ]
  * rgbMatrix[2,1].r // red value of the pixel on `2`,`1`.
- * ``
+ * ```
  */
 export type RGBAMatrix = Array<Array<RGBA>>;
 

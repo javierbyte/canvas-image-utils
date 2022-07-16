@@ -1,8 +1,26 @@
 # canvas-image-utils
 
-## Interfaces
+## Table of contents
+
+### Interfaces
 
 - [Options](interfaces/Options.md)
+
+### Type Aliases
+
+- [RGBA](modules.md#rgba)
+- [RGBAMatrix](modules.md#rgbamatrix)
+- [RGBArray](modules.md#rgbarray)
+
+### Functions
+
+- [ctxToRGBArray](modules.md#ctxtorgbarray)
+- [ctxToRGBGrayscaleMatrix](modules.md#ctxtorgbgrayscalematrix)
+- [ctxToRGBMatrix](modules.md#ctxtorgbmatrix)
+- [imageToRGBArray](modules.md#imagetorgbarray)
+- [imageToRGBMatrix](modules.md#imagetorgbmatrix)
+- [imageToRawData](modules.md#imagetorawdata)
+- [imgSrcToCtx](modules.md#imgsrctoctx)
 
 ## Type Aliases
 
@@ -23,7 +41,7 @@ Object with `r`,`g`,`b`,`a` values as 0-255 integers.
 
 #### Defined in
 
-[index.ts:2](https://github.com/javierbyte/base64-image-utils/blob/4b85c24/index.ts#L2)
+[index.ts:2](https://github.com/javierbyte/base64-image-utils/blob/4333d45/index.ts#L2)
 
 ___
 
@@ -37,7 +55,7 @@ Each element of the array containts `x`,`y`, `rgb`; its position and the RGBA va
 
 **`Example`**
 
-``js
+```js
 // rgbMatrix
 [
  [{r: 0, g: 0, b: 0}, {r: 0, g: 0, b: 0}],
@@ -45,11 +63,11 @@ Each element of the array containts `x`,`y`, `rgb`; its position and the RGBA va
  [{r: 0, g: 0, b: 0}, {r: 0, g: 0, b: 0}]
 ]
 rgbMatrix[2,1].r // red value of the pixel on `2`,`1`.
-``
+```
 
 #### Defined in
 
-[index.ts:34](https://github.com/javierbyte/base64-image-utils/blob/4b85c24/index.ts#L34)
+[index.ts:34](https://github.com/javierbyte/base64-image-utils/blob/4333d45/index.ts#L34)
 
 ___
 
@@ -63,7 +81,7 @@ Each element of the array containts `x`,`y`, `rgb`; its position and the RGBA va
 
 **`Example`**
 
-``
+```
 // rgbArray
 [
   {x: 0, y: 0, rgba: {r: 0, g: 0, b: 0}},
@@ -71,11 +89,11 @@ Each element of the array containts `x`,`y`, `rgb`; its position and the RGBA va
   {x: 1, y: 0, rgba: {r: 128, g: 128, b: 128}},
   {x: 1, y: 1, rgba: {r: 0, g: 0, b: 0}}
 ]
-``
+```
 
 #### Defined in
 
-[index.ts:18](https://github.com/javierbyte/base64-image-utils/blob/4b85c24/index.ts#L18)
+[index.ts:18](https://github.com/javierbyte/base64-image-utils/blob/4333d45/index.ts#L18)
 
 ## Functions
 
