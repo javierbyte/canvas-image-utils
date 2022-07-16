@@ -1,5 +1,13 @@
 # CHANGELOG
 
+# 2.3.2
+
+- Add `cjs` output.
+
+# 2.3.1
+
+- Remove `main`.
+
 # 2.3.0
 
 - Migrated everything to Typescript! Massive thanks to @erickjoestar for
