@@ -1,6 +1,18 @@
-import { imgSrcToCtx, ctxToRGBArray } from "./utils.js";
+import type { Options, RGBArray } from '../index';
 
-export async function imageToRGBArray(imgSrc, options = {}) {
+import { imgSrcToCtx, ctxToRGBArray } from './utils.js';
+
+/**
+ * Get an array of pixels with colors from an image
+ *
+ * @param {string} imgSrc The source of the image
+ * @param {Options} options Options for the conversion
+ * @returns {RGBArray} The array of pixels
+ */
+export async function imageToRGBArray(
+  imgSrc: string,
+  options: Options
+): Promise<RGBArray> {
   const { img, canvas, ctx } = await imgSrcToCtx(imgSrc, options);
 
   let resizeRatio = 1;

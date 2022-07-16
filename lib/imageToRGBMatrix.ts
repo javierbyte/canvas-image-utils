@@ -1,6 +1,15 @@
-import { imgSrcToCtx, ctxToRGBMatrix } from "./utils.js";
+import type { Options } from '../index';
 
-export async function imageToRGBMatrix(imgSrc, options = {}) {
+import { imgSrcToCtx, ctxToRGBMatrix } from './utils';
+
+/**
+ * Get an array of pixels with colors from an image
+ *
+ * @param {string} imgSrc The source of the image
+ * @param {Options} options Options for the conversion
+ * @returns {RGBAMatrix} The matrix of colors
+ */
+export async function imageToRGBMatrix(imgSrc: string, options: Options) {
   const { img, canvas, ctx } = await imgSrcToCtx(imgSrc, options);
 
   let resizeRatio = 1;

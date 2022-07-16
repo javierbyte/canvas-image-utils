@@ -1,11 +1,28 @@
-export function imageToRawData(imgSrc, options = {}) {
-  const { crop = true, size } = options;
+import type { Options } from '../index';
+
+/**
+ * Get raw data of an image
+ *
+ * @param {string} imageSrc The source of the image
+ * @param {Options} options Options for the conversion
+ * @returns {ImageData} Raw data of the image
+ */
+
+export function imageToRawData(
+  imageSrc: string,
+  options: Options
+): Promise<ImageData> {
+  const { crop = true, size = 512 } = options;
 
   return new Promise((resolve) => {
     const img = new window.Image();
     img.onload = function onImageLoad() {
-      const canvas = options.canvas || document.createElement("canvas");
-      const ctx = canvas.getContext("2d");
+      const canvas = options.canvas || document.createElement('canvas');
+      const ctx = canvas.getContext('2d');
+
+      if (!ctx) {
+        throw new Error("Failed to 'getContext2d'");
+      }
 
       let resizeRatio = 1;
       if (size) {
@@ -54,9 +71,8 @@ export function imageToRawData(imgSrc, options = {}) {
         ctx.canvas.width,
         ctx.canvas.height
       );
-      rawData.ctx = ctx;
       resolve(rawData);
     };
-    img.src = imgSrc;
+    img.src = imageSrc;
   });
 }

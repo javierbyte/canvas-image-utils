@@ -1,15 +1,19 @@
 {
   "name": "canvas-image-utils",
-  "version": "2.0.2",
+  "version": "2.3.0",
   "description": "Utils for image data.",
   "main": "index.js",
-  "types": "types.d.ts",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  "module": "dist/esm/index.js",
+  "types": "dist/types/index.d.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/javierbyte/canvas-image-utils.git"
+  },
+  "scripts": {
+    "prepublish": "npm run build",
+    "build": "rm -rf dist && npm run build:esm && npm run build:types",
+    "build:esm": "tsc -p ./tsconfig.esm.json",
+    "build:types": "tsc -p ./tsconfig.types.json"
   },
   "keywords": [
     "base64",
@@ -23,8 +27,5 @@
   "bugs": {
     "url": "https://github.com/javierbyte/canvas-image-utils/issues"
   },
-  "homepage": "https://github.com/javierbyte/canvas-image-utils#readme",
-  "devDependencies": {
-    "eslint": "^7.24.0"
-  }
+  "homepage": "https://github.com/javierbyte/canvas-image-utils#readme"
 }
