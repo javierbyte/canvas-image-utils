@@ -119,19 +119,19 @@ export function ctxToRGBGrayscaleMatrix(
   return result;
 }
 
-export function ctxToRawUint8Array(ctx: CanvasRenderingContext2D) {
-  const data = ctx.getImageData(0, 0, ctx.canvas.width, ctx.canvas.height).data;
-  const { width, height } = ctx.canvas;
-  const result = new Uint8Array(width * height);
-  for (let y = 0; y < ctx.canvas.height; y++) {
-    for (let x = 0; x < ctx.canvas.width; x++) {
-      result[width * x + y] = Math.floor(
-        (data[y * width * 4 + x * 4] +
-          data[y * width * 4 + x * 4 + 1] +
-          data[y * width * 4 + x * 4 + 2]) /
-          3
-      );
-    }
-  }
-  return result;
-}
+// export function ctxToRawUint8Array(ctx: CanvasRenderingContext2D) {
+//   const data = ctx.getImageData(0, 0, ctx.canvas.width, ctx.canvas.height).data;
+//   const { width, height } = ctx.canvas;
+//   const result = new Uint8Array(width * height);
+//   for (let y = 0; y < ctx.canvas.height; y++) {
+//     for (let x = 0; x < ctx.canvas.width; x++) {
+//       result[width * x + y] = Math.floor(
+//         (data[y * width * 4 + x * 4] +
+//           data[y * width * 4 + x * 4 + 1] +
+//           data[y * width * 4 + x * 4 + 2]) /
+//           3
+//       );
+//     }
+//   }
+//   return result;
+// }
