@@ -10,6 +10,7 @@
     "url": "git+https://github.com/javierbyte/canvas-image-utils.git"
   },
   "scripts": {
+    "docs": "typedoc --plugin typedoc-plugin-markdown --out docs index.ts",
     "prepublish": "npm run build",
     "build": "rm -rf dist && npm run build:esm && npm run build:types",
     "build:esm": "tsc -p ./tsconfig.esm.json",
@@ -28,5 +29,9 @@
   "bugs": {
     "url": "https://github.com/javierbyte/canvas-image-utils/issues"
   },
-  "homepage": "https://github.com/javierbyte/canvas-image-utils#readme"
+  "homepage": "https://github.com/javierbyte/canvas-image-utils#readme",
+  "devDependencies": {
+    "typedoc": "^0.23.7",
+    "typedoc-plugin-markdown": "^3.13.3"
+  }
 }
