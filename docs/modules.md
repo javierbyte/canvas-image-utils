@@ -1,48 +1,81 @@
-[canvas-image-utils](README.md) / Exports
-
 # canvas-image-utils
 
-## Table of contents
-
-### Interfaces
+## Interfaces
 
 - [Options](interfaces/Options.md)
 
-### Type Aliases
-
-- [RGBAMatrix](modules.md#rgbamatrix)
-- [RGBArray](modules.md#rgbarray)
-
-### Functions
-
-- [ctxToRGBArray](modules.md#ctxtorgbarray)
-- [ctxToRGBGrayscaleMatrix](modules.md#ctxtorgbgrayscalematrix)
-- [ctxToRGBMatrix](modules.md#ctxtorgbmatrix)
-- [ctxToRawUint8Array](modules.md#ctxtorawuint8array)
-- [imageToRGBArray](modules.md#imagetorgbarray)
-- [imageToRGBMatrix](modules.md#imagetorgbmatrix)
-- [imageToRawData](modules.md#imagetorawdata)
-- [imgSrcToCtx](modules.md#imgsrctoctx)
-
 ## Type Aliases
 
-### RGBAMatrix
+### RGBA
 
-Ƭ **RGBAMatrix**: `RGBA`[][]
+Ƭ **RGBA**: `Object`
+
+Object with `r`,`g`,`b`,`a` values as 0-255 integers.
+
+#### Type declaration
+
+| Name | Type |
+| :------ | :------ |
+| `a` | `number` |
+| `b` | `number` |
+| `g` | `number` |
+| `r` | `number` |
 
 #### Defined in
 
-[index.ts:3](https://github.com/javierbyte/base64-image-utils/blob/75e0854/index.ts#L3)
+[index.ts:2](https://github.com/javierbyte/base64-image-utils/blob/dfaf675/index.ts#L2)
+
+___
+
+### RGBAMatrix
+
+Ƭ **RGBAMatrix**: [`RGBA`](modules.md#rgba)[][]
+
+All output pixels in a matrix. RGBAMatrix is an array of size `WIDTH`, and each array contains an array of size `HEIGHT` which constains the `RGBA` elements.
+
+Each element of the array containts `x`,`y`, `rgb`; its position and the RGBA value.
+
+**`Example`**
+
+``js
+// rgbMatrix
+[
+ [{r: 0, g: 0, b: 0}, {r: 0, g: 0, b: 0}],
+ [{r: 0, g: 0, b: 0}, {r: 0, g: 0, b: 0}],
+ [{r: 0, g: 0, b: 0}, {r: 0, g: 0, b: 0}]
+]
+rgbMatrix[2,1].r // red value of the pixel on `2`,`1`.
+``
+
+#### Defined in
+
+[index.ts:34](https://github.com/javierbyte/base64-image-utils/blob/dfaf675/index.ts#L34)
 
 ___
 
 ### RGBArray
 
-Ƭ **RGBArray**: { `rgb`: `RGBA` ; `x`: `number` ; `y`: `number`  }[]
+Ƭ **RGBArray**: { `rgb`: [`RGBA`](modules.md#rgba) ; `x`: `number` ; `y`: `number`  }[]
+
+All output pixels in an array sized `WIDTH` * `HEIGHT`.
+
+Each element of the array containts `x`,`y`, `rgb`; its position and the RGBA value.
+
+**`Example`**
+
+``
+// rgbArray
+[
+  {x: 0, y: 0, rgba: {r: 0, g: 0, b: 0}},
+  {x: 0, y: 1, rgba: {r: 255, g: 255, b: 255}},
+  {x: 1, y: 0, rgba: {r: 128, g: 128, b: 128}},
+  {x: 1, y: 1, rgba: {r: 0, g: 0, b: 0}}
+]
+``
 
 #### Defined in
 
-[index.ts:2](https://github.com/javierbyte/base64-image-utils/blob/75e0854/index.ts#L2)
+[index.ts:18](https://github.com/javierbyte/base64-image-utils/blob/dfaf675/index.ts#L18)
 
 ## Functions
 
@@ -68,14 +101,16 @@ ___
 
 ### ctxToRGBGrayscaleMatrix
 
-▸ **ctxToRGBGrayscaleMatrix**(`ctx`, `transparent?`): `Uint8Array`[]
+▸ **ctxToRGBGrayscaleMatrix**(`ctx`, `opacityBackgroundLightness?`): `Uint8Array`[]
+
+Generates a matrix grayscale values for each pixel. Each pixel is a 0-255 value and each row is an `Uint8Array`.
 
 #### Parameters
 
-| Name | Type | Default value |
-| :------ | :------ | :------ |
-| `ctx` | `CanvasRenderingContext2D` | `undefined` |
-| `transparent` | `number` | `255` |
+| Name | Type | Default value | Description |
+| :------ | :------ | :------ | :------ |
+| `ctx` | `CanvasRenderingContext2D` | `undefined` | The CanvasRenderingContext2D |
+| `opacityBackgroundLightness` | `number` | `255` | - |
 
 #### Returns
 
@@ -165,7 +200,7 @@ ___
 
 ▸ **imageToRawData**(`imageSrc`, `options`): `Promise`<`ImageData`\>
 
-Get raw data of an image
+Get raw data of an image source.
 
 #### Parameters
 
@@ -186,7 +221,7 @@ ___
 
 ▸ **imgSrcToCtx**(`imgSrc`, `options`): `Promise`<{ `canvas`: `HTMLCanvasElement` ; `ctx`: `CanvasRenderingContext2D` ; `img`: `HTMLImageElement`  }\>
 
-Generates a CanvasRenderingContext2D from a image
+Returns a "CanvasRenderingContext2D" from an image source.
 
 #### Parameters
 

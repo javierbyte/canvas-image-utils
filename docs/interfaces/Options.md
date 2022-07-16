@@ -1,15 +1,4 @@
-[canvas-image-utils](../README.md) / [Exports](../modules.md) / Options
-
 # Interface: Options
-
-## Table of contents
-
-### Properties
-
-- [canvas](Options.md#canvas)
-- [crop](Options.md#crop)
-- [maxSize](Options.md#maxsize)
-- [size](Options.md#size)
 
 ## Properties
 
@@ -17,9 +6,11 @@
 
 • **canvas**: `HTMLCanvasElement`
 
+The canvas element with the source image.
+
 #### Defined in
 
-[index.ts:6](https://github.com/javierbyte/base64-image-utils/blob/75e0854/index.ts#L6)
+[index.ts:38](https://github.com/javierbyte/base64-image-utils/blob/dfaf675/index.ts#L38)
 
 ___
 
@@ -29,7 +20,7 @@ ___
 
 #### Defined in
 
-[index.ts:9](https://github.com/javierbyte/base64-image-utils/blob/75e0854/index.ts#L9)
+[index.ts:43](https://github.com/javierbyte/base64-image-utils/blob/dfaf675/index.ts#L43)
 
 ___
 
@@ -37,9 +28,11 @@ ___
 
 • `Optional` **maxSize**: `number`
 
+Maximum of the largest side of the outputs.
+
 #### Defined in
 
-[index.ts:8](https://github.com/javierbyte/base64-image-utils/blob/75e0854/index.ts#L8)
+[index.ts:42](https://github.com/javierbyte/base64-image-utils/blob/dfaf675/index.ts#L42)
 
 ___
 
@@ -47,6 +40,8 @@ ___
 
 • `Optional` **size**: `number`
 
+Size of the largest side of the outputs.
+
 #### Defined in
 
-[index.ts:7](https://github.com/javierbyte/base64-image-utils/blob/75e0854/index.ts#L7)
+[index.ts:40](https://github.com/javierbyte/base64-image-utils/blob/dfaf675/index.ts#L40)

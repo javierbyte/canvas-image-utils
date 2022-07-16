@@ -1,7 +1,7 @@
 import type { Options } from '../index';
 
 /**
- * Get raw data of an image
+ * Get raw data of an image source.
  *
  * @param {string} imageSrc The source of the image
  * @param {Options} options Options for the conversion

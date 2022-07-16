@@ -1,7 +1,7 @@
 import type { Options, RGBArray, RGBAMatrix } from '../index';
 
 /**
- * Generates a CanvasRenderingContext2D from a image
+ * Returns a "CanvasRenderingContext2D" from an image source.
  *
  * @param {string} imgSrc The source of the image
  * @param {Options} options Options for the conversion
@@ -83,10 +83,15 @@ export function ctxToRGBMatrix(ctx: CanvasRenderingContext2D): RGBAMatrix {
   return result;
 }
 
+/**
+ * Generates a matrix grayscale values for each pixel. Each pixel is a 0-255 value and each row is an `Uint8Array`.
+ *
+ * @param {CanvasRenderingContext2D} ctx The CanvasRenderingContext2D
+ */
 export function ctxToRGBGrayscaleMatrix(
   ctx: CanvasRenderingContext2D,
-  transparent = 255
-) {
+  opacityBackgroundLightness = 255
+): Uint8Array[] {
   const { data } = ctx.getImageData(0, 0, ctx.canvas.width, ctx.canvas.height);
   const { width, height } = ctx.canvas;
   let result = [];
@@ -106,7 +111,8 @@ export function ctxToRGBGrayscaleMatrix(
       const opacity = data[y * width * 4 + x * 4 + 3];
       if (opacity !== 255) {
         result[x][y] =
-          result[x][y] * (opacity / 255) + transparent * (1 - opacity / 255);
+          result[x][y] * (opacity / 255) +
+          opacityBackgroundLightness * (1 - opacity / 255);
       }
     }
   }
