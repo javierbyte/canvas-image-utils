@@ -1,5 +1,9 @@
 # CHANGELOG
 
+# 2.5.0
+
+- Add `crop` support for all transformations.
+
 # 2.4.0
 
 - Improve type definitions.

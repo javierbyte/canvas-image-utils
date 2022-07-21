@@ -41,7 +41,7 @@ Object with `r`,`g`,`b`,`a` values as 0-255 integers.
 
 #### Defined in
 
-[index.ts:2](https://github.com/javierbyte/base64-image-utils/blob/62c261c/index.ts#L2)
+[index.ts:2](https://github.com/javierbyte/base64-image-utils/blob/a78df0e/index.ts#L2)
 
 ___
 
@@ -67,7 +67,7 @@ rgbMatrix[2,1].r // red value of the pixel on `2`,`1`.
 
 #### Defined in
 
-[index.ts:34](https://github.com/javierbyte/base64-image-utils/blob/62c261c/index.ts#L34)
+[index.ts:34](https://github.com/javierbyte/base64-image-utils/blob/a78df0e/index.ts#L34)
 
 ___
 
@@ -93,7 +93,7 @@ Each element of the array containts `x`,`y`, `rgb`; its position and the RGBA va
 
 #### Defined in
 
-[index.ts:18](https://github.com/javierbyte/base64-image-utils/blob/62c261c/index.ts#L18)
+[index.ts:18](https://github.com/javierbyte/base64-image-utils/blob/a78df0e/index.ts#L18)
 
 ## Functions
 
@@ -200,22 +200,22 @@ ___
 
 ### imageToRawData
 
-▸ **imageToRawData**(`imageSrc`, `options`): `Promise`<`ImageData`\>
+▸ **imageToRawData**(`imgSrc`, `options`): `Promise`<`ImageData`\>
 
-Get raw data of an image source.
+Get an array of pixels with colors from an image
 
 #### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `imageSrc` | `string` | The source of the image |
+| `imgSrc` | `string` | The source of the image |
 | `options` | [`Options`](interfaces/Options.md) | Options for the conversion |
 
 #### Returns
 
 `Promise`<`ImageData`\>
 
-Raw data of the image
+Image data after resizing and crop.
 
 ___
 
@@ -236,4 +236,4 @@ Returns a "CanvasRenderingContext2D" from an image source.
 
 `Promise`<{ `canvas`: `HTMLCanvasElement` ; `ctx`: `CanvasRenderingContext2D` ; `img`: `HTMLImageElement`  }\>
 
-The CanvasRenderingContext2D
+An object containing the original `img`, and the cropped and resized `canvas` and `ctx`.

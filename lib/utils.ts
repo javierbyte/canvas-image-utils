@@ -5,7 +5,7 @@ import type { Options, RGBArray, RGBAMatrix } from '../index';
  *
  * @param {string} imgSrc The source of the image
  * @param {Options} options Options for the conversion
- * @returns {RGBArray} The CanvasRenderingContext2D
+ * @returns {{img: HTMLImageElement, canvas: HTMLCanvasElement, ctx: CanvasRenderingContext2D}} An object containing the original `img`, and the cropped and resized `canvas` and `ctx`.
  */
 
 export async function imgSrcToCtx(
@@ -17,13 +17,53 @@ export async function imgSrcToCtx(
   ctx: CanvasRenderingContext2D;
 }> {
   return new Promise((resolve) => {
+    const { crop = true, size, maxSize } = options;
+
     const img = new window.Image();
     img.onload = function onImageLoad() {
       const canvas = options.canvas || document.createElement('canvas');
       const ctx = canvas.getContext('2d');
 
       if (!ctx) {
-        throw new Error();
+        throw new Error("Failed to 'getContext2d'");
+      }
+
+      let resizeRatio = 1;
+      if (size) {
+        resizeRatio = size / Math.max(img.width, img.height);
+      }
+
+      if (options.maxSize) {
+        if (img.width > options.maxSize || img.height > options.maxSize) {
+          resizeRatio = options.maxSize / Math.max(img.width, img.height);
+        }
+      }
+
+      const imageWidth = Math.floor(img.width * resizeRatio);
+      const imageHeight = Math.floor(img.height * resizeRatio);
+
+      if (crop) {
+        canvas.width = size || maxSize || img.width;
+        canvas.height = size || maxSize || img.height;
+
+        const smallSide = Math.min(img.width, img.height);
+
+        ctx.drawImage(
+          img,
+          (img.width - smallSide) / 2,
+          (img.height - smallSide) / 2,
+          smallSide,
+          smallSide,
+          0,
+          0,
+          canvas.width,
+          canvas.height
+        );
+      } else {
+        // NO CROP
+        canvas.width = imageWidth;
+        canvas.height = imageHeight;
+        ctx.drawImage(img, 0, 0, imageWidth, imageHeight);
       }
 
       resolve({ img, canvas, ctx });
@@ -41,6 +81,7 @@ export async function imgSrcToCtx(
 export function ctxToRGBArray(ctx: CanvasRenderingContext2D): RGBArray {
   const data = ctx.getImageData(0, 0, ctx.canvas.width, ctx.canvas.height).data;
   const result: RGBArray = [];
+
   for (let y = 0; y < ctx.canvas.height; y++) {
     for (let x = 0; x < ctx.canvas.width; x++) {
       result.push({
@@ -101,7 +142,7 @@ export function ctxToRGBGrayscaleMatrix(
         result[x] = new Uint8Array(height);
       }
 
-      result[x][y] = Math.floor(
+      result[x][y] = Math.round(
         (data[y * width * 4 + x * 4] +
           data[y * width * 4 + x * 4 + 1] +
           data[y * width * 4 + x * 4 + 2]) /
@@ -110,9 +151,10 @@ export function ctxToRGBGrayscaleMatrix(
 
       const opacity = data[y * width * 4 + x * 4 + 3];
       if (opacity !== 255) {
-        result[x][y] =
+        result[x][y] = Math.round(
           result[x][y] * (opacity / 255) +
-          opacityBackgroundLightness * (1 - opacity / 255);
+            opacityBackgroundLightness * (1 - opacity / 255)
+        );
       }
     }
   }
