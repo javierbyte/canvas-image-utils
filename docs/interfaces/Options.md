@@ -19,7 +19,7 @@ The canvas element with the source image.
 
 #### Defined in
 
-[index.ts:38](https://github.com/javierbyte/base64-image-utils/blob/a78df0e/index.ts#L38)
+[index.ts:38](https://github.com/javierbyte/base64-image-utils/blob/af6eb27/index.ts#L38)
 
 ___
 
@@ -29,7 +29,7 @@ ___
 
 #### Defined in
 
-[index.ts:43](https://github.com/javierbyte/base64-image-utils/blob/a78df0e/index.ts#L43)
+[index.ts:43](https://github.com/javierbyte/base64-image-utils/blob/af6eb27/index.ts#L43)
 
 ___
 
@@ -41,7 +41,7 @@ Maximum of the largest side of the outputs.
 
 #### Defined in
 
-[index.ts:42](https://github.com/javierbyte/base64-image-utils/blob/a78df0e/index.ts#L42)
+[index.ts:42](https://github.com/javierbyte/base64-image-utils/blob/af6eb27/index.ts#L42)
 
 ___
 
@@ -53,4 +53,4 @@ Size of the largest side of the outputs.
 
 #### Defined in
 
-[index.ts:40](https://github.com/javierbyte/base64-image-utils/blob/a78df0e/index.ts#L40)
+[index.ts:40](https://github.com/javierbyte/base64-image-utils/blob/af6eb27/index.ts#L40)

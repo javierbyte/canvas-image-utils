@@ -1,6 +1,6 @@
-import type { Options, RGBArray } from '../index';
+import type { Options } from '../index';
 
-import { imgSrcToCtx, ctxToRGBArray } from './utils.js';
+import { imgSrcToCtx } from './utils.js';
 
 /**
  * Get an array of pixels with colors from an image
